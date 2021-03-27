@@ -213,4 +213,3 @@ class Geometry(FmodObject):
         ptr = create_string_buffer(size.value)
         self._call_fmod("FMOD_Geometry_Save", ptr, byref(size))
         return ptr.raw
-        return string_at(ptr, size)

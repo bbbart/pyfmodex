@@ -1,4 +1,5 @@
 """Fmod ex python bindings."""
+
 from .fmodex import (
     get_disk_busy,
     set_disk_busy,
@@ -30,16 +31,18 @@ from .roomproperties import MaterialNames, RoomProperties
 
 __version__ = "0.7.0"
 
-c = {}
-c["DSP"] = dsp.DSP
-c["DSP_Connection"] = dsp_connection.DSPConnection
-c["Geometry"] = geometry.Geometry
-c["Channel"] = channel.Channel
-c["ChannelGroup"] = channel_group.ChannelGroup
-c["Reverb3D"] = reverb.Reverb3D
-c["Sound"] = sound.Sound
-c["SoundGroup"] = sound_group.SoundGroup
-c["System"] = system.System
+c = {
+    "DSP": dsp.DSP,
+    "DSP_Connection": dsp_connection.DSPConnection,
+    "Geometry": geometry.Geometry,
+    "Channel": channel.Channel,
+    "ChannelGroup": channel_group.ChannelGroup,
+    "Reverb3D": reverb.Reverb3D,
+    "Sound": sound.Sound,
+    "SoundGroup": sound_group.SoundGroup,
+    "System": system.System,
+}
+
 globalvars.class_list = c
 from . import constants
 

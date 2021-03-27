@@ -2,11 +2,7 @@ import os
 from ctypes import *
 from .structure_declarations import *
 
-if os.name == "nt":
-    func = WINFUNCTYPE
-else:
-    func = CFUNCTYPE
-
+func = WINFUNCTYPE if os.name == "nt" else CFUNCTYPE
 DSP_ALLOC_FUNC = func(c_void_p, c_uint, c_int, c_char_p)
 DSP_REALLOC_FUNC = func(c_void_p, c_void_p, c_uint, c_int, c_char_p)
 DSP_FREE_FUNC = func(None, c_void_p, c_int, c_char_p)

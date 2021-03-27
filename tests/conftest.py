@@ -75,8 +75,7 @@ def sound(initialized_system):
 
 @pytest.fixture
 def channel(sound):
-    channel = sound.get_subsound(0).play(paused=True)
-    return channel
+    return sound.get_subsound(0).play(paused=True)
 
 @pytest.fixture(scope="session")
 def midi_sound(initialized_system):
@@ -96,30 +95,24 @@ def channel_group(initialized_system, channel):
 
 @pytest.fixture
 def sound_group(initialized_system):
-    group = initialized_system.create_sound_group("test group")
-    return group
+    return initialized_system.create_sound_group("test group")
 
 @pytest.fixture
 def compressor(initialized_system):
-    comp = initialized_system.create_dsp_by_type(DSP_TYPE.COMPRESSOR)
-    return comp
+    return initialized_system.create_dsp_by_type(DSP_TYPE.COMPRESSOR)
 
 @pytest.fixture
 def oscillator(initialized_system):
-    osc = initialized_system.create_dsp_by_type(DSP_TYPE.OSCILLATOR)
-    return osc
+    return initialized_system.create_dsp_by_type(DSP_TYPE.OSCILLATOR)
 
 @pytest.fixture
 def conn(echo, oscillator):
-    conn = echo.add_input(echo, DSPCONNECTION_TYPE.STANDARD)
-    return conn
+    return echo.add_input(echo, DSPCONNECTION_TYPE.STANDARD)
 
 @pytest.fixture
 def geometry(initialized_system):
-    geom = initialized_system.create_geometry(42, 420)
-    return geom
+    return initialized_system.create_geometry(42, 420)
 
 @pytest.fixture
 def reverb(initialized_system):
-    reverb = initialized_system.create_reverb_3d()
-    return reverb
+    return initialized_system.create_reverb_3d()

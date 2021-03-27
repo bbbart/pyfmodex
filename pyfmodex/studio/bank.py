@@ -32,7 +32,4 @@ class Bank(StudioObject):
         written = c_int()
         self._call("GetEventList", array, count, byref(written))
         assert count == written.value
-        descs = []
-        for pointer in array:
-            descs.append(EventDescription(pointer))
-        return descs
+        return [EventDescription(pointer) for pointer in array]
