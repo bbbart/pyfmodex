@@ -100,7 +100,7 @@ def test_driver(system):
 
 def test_get_driver_info(system):
     info = system.get_driver_info(0)
-    assert info.system_rate == 44100 or info.system_rate == 48000
+    assert info.system_rate in [44100, 48000]
     assert len(info.name) > 0
 
 def test_file_usage(system):
@@ -156,7 +156,7 @@ def test_get_plugin_info(system):
 
 def test_get_record_driver_info(initialized_system):
     info = initialized_system.get_record_driver_info(0)
-    assert info.system_rate == 44100 or info.system_rate == 48000
+    assert info.system_rate in [44100, 48000]
         
 
 def test_record_num_drivers(initialized_system):
